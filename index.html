@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
+    <title>Diskominfosan</title>
+
+    <!-- <link rel="shortcut icon" href="/components/logo.png" type="image/x-icon"> -->
+
+    <!-- Style Tailwind Inline -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .navbar-scroll {
+          @apply fixed z-50 bg-white bg-opacity-30 shadow-lg;
+          backdrop-filter: blur(3px);
+        }
+
+        .hamburger-costum {
+          @apply w-[30px] h-[2px] my-2 block bg-black;
+        }
+
+        .hamburger-click > span:nth-child(1) {
+          @apply -rotate-45;
+        }
+
+        .hamburger-click > span:nth-child(2) {
+          @apply scale-0;
+        }
+
+        .hamburger-click > span:nth-child(3) {
+          @apply rotate-45;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="py-7 md:py-[70px]">
+      <div id="controls-carousel" class="relative" data-carousel="static">
+        <div class="relative h-56 overflow-hidden md:h-[550px]">
+          <!-- Item 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img src="./components/Slide.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 brightness-50" alt="..." />
+  
+            <!-- CALL TO ACTION -->
+            <div class="absolute text-center top-1/4 right-1/2 translate-x-1/2 text-white font-raleway w-[800px]">
+              <h1 class="font-bold text-yellow-400 md:text-[40px]">
+                Pemerintah Kab.Sukabumi
+              </h1>
+              <h3 class="text-2xs md:text-xl">Bantuan Sosial Untuk Semua <br>Kami memiliki komitmen untuk menyalurkan bantuan dengan tepat sasaran
+                dan membantu meningkatkan kualitas hidup masyarakat. Dukung program
+                penyaluran hibah kami dan berikan dampak positif bagi sesama.</h3>
+              <p></p>
+              <a href="./components/Slide.png"
+                class="absolute right-1/2 translate-x-1/2 flex items-center text-center gap-2 md:py-2 md:px-6 px-3 py-1 bg-secondary rounded-full md:text-[15px] text-xs font-raleway font-medium text-gray-600 mt-10 hover:bg-blue-700 hover:text-white focus:bg-blue-700 focus:text-white duration-500">
+                Selengkapnya<i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="./components/Slide.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+          </div>
+          <!-- Item 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="./components/Slide.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+          </div>
+          <!-- Item 4 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="./components/Slide.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+          </div>
+        </div>
+  
+        <!-- CAROUSEL CONTROL -->
+        <button type="button"
+          class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev>
+          <span class="inline-flex items-center justify-center">
+            <svg aria-hidden="true" class="w-5 h-5 text-white md:w-10 md:h-10" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+              </path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button type="button"
+          class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group"
+          data-carousel-next>
+          <span class="inline-flex items-center justify-center">
+            <svg aria-hidden="true" class="w-5 h-5 text-white md:w-10 md:h-10" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+    </section>
+    <!-- Header Start -->
+    <header class="w-full pt-2 absolute top-0 left-0 flex items-center z-50">
+      <div class="w-full container">
+        <div class="w-full flex items-center relative">
+          <!-- Logo -->
+          <div class="w-[200px] pl-6 pr-10 py-4 mb-2 lg:w-[450px] lg:px-20">
+            <a href="#home" class="block">
+              <img src="./components/logo.png" alt="Logo" />
+            </a>
+          </div>
+
+          <div class="lg:w-full flex items-center gap-2 px-2 mb-2">
+            <!-- Hamburger Navigasi -->
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="hamburger-costum transition duration-300 ease-in-out origin-top-right"
+              ></span>
+              <span
+                class="hamburger-costum transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-costum transition duration-300 ease-in-out origin-bottom-right"
+              ></span>
+            </button>
+
+            <!-- Navigasi -->
+            <nav
+              id="navbar"
+              class="hidden w-full absolute py-4 bg-sky-400 shadow-lg rounded-lg top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:mt-2"
+            >
+              <ul class="block lg:flex lg:justify-center">
+                <li class="group">
+                  <a
+                    href="./beranda.html"
+                    class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+                    >Beranda</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="./program.html"
+                    class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+                    >Program</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="./Laporan.html"
+                    class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+                    >Laporan</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="./pengaturan.html"
+                    class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+                    >Pengaturan</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="./kontak.html"
+                    class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+                    >Kontak</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="./Menu.html"
+                    class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+                    >Menu</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Profile -->
+            <div id="profile" class="hidden mb-2 lg:block">
+              <a href="" class="w-[40px] left-10 flex items-center gap-6">
+                <img src="./components/profile.png" alt="Profile" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Content Start -->
+    
+
+    <!-- Main Content End -->
+
+    <!-- Content Penyaluran Dana Start -->
+    <div class="container w-full mt-20 mb-[100px] flex">
+      <div class="w-1/3 px-10">
+        <div class="mb-10 text-lg text-black font-semibold">
+          Penyaluran dana yang terbuka mewujudkan pembangunan Kabupaten Sukabumi
+          bersama.
+        </div>
+        <a
+          href=""
+          class="px-16 py-4 text-base font-medium text-white bg-[#00ABE7] rounded-xl border-[#00ABE7] border-2 hover:bg-white hover:text-[#00ABE7] hover:shadow-2xl duration-300"
+        >
+          Selengkapnya
+        </a>
+      </div>
+
+      <div class="w-[550px] text-sm font-medium">
+        <div class="mb-7">
+          Dukung kami dalam menyalurkan bantuan yang tepat sasaran dan
+          memberikan manfaat yang berarti bagi mereka yang membutuhkan.
+        </div>
+        <div>
+          Bantuan yang akurat dan tepat sasaran dapat memberikan dampak positif
+          yang signifikan bagi lingkungan sekitar dan meningkatkan kualitas
+          hidup masyarakat.
+        </div>
+      </div>
+
+      <div class="w-[400px] block absolute right-8 top-[720px] px-10 ">
+        <img src="./components/Document.png" alt="Document Image" />
+      </div>
+    </div>
+    <!-- Content Penyaluran Dana End -->
+
+    <!-- Content Tahapan Pengajuan Hibah Start -->
+    <div class="w-full h-80 bg-[#002D3D] text-white px-10">
+      <h1 class="text-2xl font-bold mb-2 pt-12">Tahapan</h1>
+      <p class="text-base">
+        Tahapan yang perlu dilakukan untuk para pengaju bantuan hibah.
+      </p>
+
+      <!-- Garis Lurus -->
+      <div class="w-[1020px] absolute right-40 -bottom-[625px]">
+        <hr class="w-full h-2 rounded-3xl bg-yellow-400" />
+      </div>
+
+      <div class="container w-full rel mt-16 text-center flex">
+        <!-- Daftar Hibah -->
+        <div class="w-1/5">
+          <div class="w-8 h-8 rounded-full bg-yellow-400 mx-auto"></div>
+          <p class="mt-5 px-20">Daftar Hibah</p>
+        </div>
+        
+        
+<button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white mt-80 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Kategori <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+<!-- Dropdown menu -->
+<div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+    <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownDefaultButton">
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">Dashboard</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">Settings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Earnings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign out</a>
+      </li>
+    </ul>
+</div>
+
+<div class="absolute right-0 top-[1500px] z-50 ">
+  <input class="text-black" type="text" placeholder="search">
+  <button>Search</button>
+</div>
+
+        <!-- Verifikasi -->
+        <div class="w-1/5">
+          <div class="w-8 h-8 rounded-full bg-yellow-400 mx-auto"></div>
+          <p class="mt-5 px-20">Verifikasi</p>
+        </div>
+
+        <!-- Disetujui -->
+        <div class="w-1/5">
+          <div class="w-8 h-8 rounded-full bg-yellow-400 mx-auto"></div>
+          <p class="mt-5 px-20">Disetujui</p>
+        </div>
+
+        <!-- Hibah Berjalan -->
+        <div class="w-1/5">
+          <div class="w-8 h-8 rounded-full bg-yellow-400 mx-auto"></div>
+          <p class="mt-5 px-20">Hibah Berjalan</p>
+        </div>
+
+        <!-- Mengirim Laporan -->
+        <div class="w-1/5">
+          <div class="w-8 h-8 rounded-full bg-yellow-400 mx-auto"></div>
+          <p class="mt-5 px-20">Mengirim Laporan</p>
+        </div>
+      </div>
+    </div>
+    <!-- Content Tahapan Pengajuan Hibah End -->
+
+    <!-- Content Daftar Hibah Start -->
+    
+    
+    <div class="w-full">
+      <div
+        class="text-center text-[#002D3D] text-3xl h-[200px] mt-24 font-bold h-[100px]"
+      >
+        Daftar Hibah
+      </div>
+    </div>
+    <!-- Content Daftar Hibah End -->
+    <!-- Content Bantuan Sosial untuk anak kurang mampu di kecamatan Cisaat Start-->
+
+    <div class="flex ">
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img src="./components/Foto.Png" alt="" class="w-[150px] h-[150px] mx-5" />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Bantuan Sosial untuk anak kurang mampu di kecamatan Cisaat
+            </h2>
+            <h3 class="text-base mt-2">Alfredo Rosser</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-blue-400 w-5 mx-20">Disetujui</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 70.000.000,-</p>
+        </div>
+      </div>
+
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img src="./components/Foto.Png" alt="" class="w-[150px] h-[150px] mx-5" />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Bantuan Sosial untuk anak kurang mampu di kecamatan Cisaat
+            </h2>
+            <h3 class="text-base mt-2">Alfredo Rosser</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-blue-400 w-5 mx-20">Disetujui</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 70.000.000,-</p>
+        </div>
+      </div>
+
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img src="./components/Foto.png" alt="" class="w-[150px] h-[150px] mx-5" />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Bantuan Sosial untuk anak kurang mampu di kecamatan Cisaat
+            </h2>
+            <h3 class="text-base mt-2">Alfredo Rosser</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-blue-400 w-5 mx-20">Disetujui</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 70.000.000,-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Bantuan Sosial untuk anak kurang mampu di kecamatan Cisaat End -->
+
+    <!-- Content Perbaikan Jalan pada desa Durian Runtuh Start-->
+    <div class="flex h-80">
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img
+              src="./components/Foto (1).png"
+              alt=""
+              class="w-[150px] h-[150px] mx-5"
+            />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Perbaikan Jalan pada desa Durian Runtuh
+            </h2>
+            <h3 class="text-base mt-2">Lincoln Franci</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-blue-400 w-5 mx-20">Disetujui</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 1.150.000.000,-</p>
+        </div>
+      </div>
+
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img
+              src="./components/Foto (1).Png"
+              alt=""
+              class="w-[150px] h-[150px] mx-5"
+            />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Perbaikan Jalan pada desa Durian Runtuh
+            </h2>
+            <h3 class="text-base mt-2">Lincoln Franci</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-blue-400 w-5 mx-20">Disetujui</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 1.150.000.000,-</p>
+        </div>
+      </div>
+
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img
+              src="./components/Foto (1).Png"
+              alt=""
+              class="w-[150px] h-[150px] mx-5"
+            />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Perbaikan Jalan pada desa Durian Runtuh
+            </h2>
+            <h3 class="text-base mt-2">Lincoln Franci</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-blue-400 w-5 mx-20">Disetujui</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 1.150.000.000,-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Perbaikan Jalan pada desa Durian Runtuh End -->
+
+    <!-- Content Paket Bantuan Buka Puasa untuk masyarakat Kec. Cibadak Start-->
+    <div class="flex h-80">
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img
+              src="./components/Foto (2).png"
+              alt=""
+              class="w-[150px] h-[150px] mx-5"
+            />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Paket Bantuan Buka Puasa untuk masyarakat Kec. Cibadak
+            </h2>
+            <h3 class="text-base mt-2">James Baptista</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-red-400 w-5 mx-20">DiTolak</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 1.000.000.000,-</p>
+        </div>
+      </div>
+
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img
+              src="./components/Foto (2).png"
+              alt=""
+              class="w-[150px] h-[150px] mx-5"
+            />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Paket Bantuan Buka Puasa untuk masyarakat Kec. Cibadak
+            </h2>
+            <h3 class="text-base mt-2">James Baptista</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-red-400 w-5 mx-20">DiTolak</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 1.000.000.000,-</p>
+        </div>
+      </div>
+
+      <div class="w-1/3">
+        <div class="w-full flex">
+          <div>
+            <img
+              src="./components/Foto (2).png"
+              alt=""
+              class="w-[150px] h-[150px] mx-5"
+            />
+          </div>
+          <div class="pl-5 w-[250px] h-[190px]">
+            <p class="text-sm">4 April 2023</p>
+            <h2 class="text-lg font-bold mt-4">
+              Paket Bantuan Buka Puasa untuk masyarakat Kec. Cibadak
+            </h2>
+            <h3 class="text-base mt-2">James Baptista</h3>
+          </div>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Tahapan</h3>
+          <p class="text-red-400 w-5 mx-20">DiTolak</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Kategori</h3>
+          <p class="mx-20">Bantuan Social</p>
+        </div>
+        <div class="flex mx-5">
+          <h3 class="font-bold">Nilai</h3>
+          <p class="mx-auto">Rp 1.000.000.000,-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Paket Bantuan Buka Puasa untuk masyarakat Kec. Cibadak End-->
+
+    <!-- Content Footer Start-->
+    <div class="w-full h-80 bg-black flex text-white px-1">
+      <div class="w-[200px] pl-6 pr-10 py-4 mb-2 lg:w-[450px] lg:px-20">
+        <a href="#home" class="block">
+          <img src="./components/logo.png" alt="Logo" />
+        </a>
+        <h3 class="flex pt-6">Sabilulungan Kabupaten Sukabumi</h3>
+      </div>
+     
+
+      <div class=" absolute bottom-auto left-20 pt-52">
+        <img src="./components/ig.png" alt="">
+      </div>
+
+      <div class=" absolute bottom-auto left-40 pt-52">
+        <img src="./components/fb.png" alt="">
+      </div>
+
+      <div class=" absolute bottom-auto left-60 pt-52">
+        <img src="./components/ytb.png" alt="">
+      </div>
+
+      <div class="mt-20">
+        <ul class="block lg:flex lg:justify-center">
+          <li class="group">
+            <a
+              href="#about"
+              class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+              >Program</a
+            >
+          </li>
+          <li class="group">
+            <a
+              href="#service"
+              class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+              >Laporan</a
+            >
+          </li>
+          <li class="group">
+            <a
+              href="#download"
+              class="mx-4 flex py-3 text-white text-xl lg:text-slate-800 lg:font-semibold hover:text-slate-500 lg:text-base lg:hover:text-slate-400"
+              >Pengaturan</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div >
+        <p class="right-32 bottom-auto pt-24 absolute">Contact</p>
+      </div>
+      
+      <div class="right-52 bottom-auto pt-40 absolute">
+      <img src="./components/email.png" alt="">
+      <p class="">email@gmail.com</p>
+    </div>
+    
+
+    <!-- Content Footer End-->
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  </body>
+</html>
